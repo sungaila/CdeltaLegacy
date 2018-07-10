@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Cdelta.CodeGen</AssemblyName>
+    <RootNamespace>Cdelta.CodeGen</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Analyser\Analyser.csproj" />
+  </ItemGroup>
+
+</Project>

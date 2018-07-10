@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cdelta.Compiler
+{
+	public automaton CompilationOutput
+	{
+		start state Analysing
+		{
+			entry
+			{
+				Console.WriteLine("[1/3] Analyse given C delta code ...");
+			}
+		}
+		
+		state CodeGeneration
+		{
+			entry
+			{
+				Console.WriteLine("[2/3] Generate C# code ...");
+			}
+		}
+		
+		state SyntaxCheck
+		{
+			entry
+			{
+				Console.WriteLine("[3/3] Checking syntax of generated C# code ...");
+			}
+		}
+		
+		end state Success
+		{
+			entry
+			{
+				Console.WriteLine("");
+				Console.WriteLine("Transcompilation finished successfully!");
+			}
+		}
+
+		transition Analysing CodeGeneration { return true; }
+		transition CodeGeneration SyntaxCheck { return true; }
+		transition SyntaxCheck Success { return true; }
+	}
+}

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>Cdelta.Console</AssemblyName>
+    <RootNamespace>Cdelta.Console</RootNamespace>
+    <StartupObject>Console.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Compiler\Compiler.csproj" />
+  </ItemGroup>
+
+</Project>

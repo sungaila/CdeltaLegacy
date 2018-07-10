@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Console": {
+      "commandName": "Project",
+      "commandLineArgs": "\"E:\\Documents\\Studium\\Cdelta\\Compiler\\CompilationOutput.cs.cdelta\" \"\"E:\\Documents\\Studium\\Cdelta\\Compiler\\CompilationOutput.cs\""
+    }
+  }
+}

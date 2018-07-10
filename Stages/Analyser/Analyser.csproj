@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Cdelta.Analyser</AssemblyName>
+    <RootNamespace>Cdelta.Analyser</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Grammar\obj\Release\CdeltaLexer.cs" Link="Generated\CdeltaLexer.cs" />
+    <Compile Include="..\Grammar\obj\Release\CdeltaParser.cs" Link="Generated\CdeltaParser.cs" />
+    <Compile Include="..\Grammar\obj\Release\CdeltaParserBaseListener.cs" Link="Generated\CdeltaParserBaseListener.cs" />
+    <Compile Include="..\Grammar\obj\Release\CdeltaParserBaseVisitor.cs" Link="Generated\CdeltaParserBaseVisitor.cs" />
+    <Compile Include="..\Grammar\obj\Release\CdeltaParserListener.cs" Link="Generated\CdeltaParserListener.cs" />
+    <Compile Include="..\Grammar\obj\Release\CdeltaParserVisitor.cs" Link="Generated\CdeltaParserVisitor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generated\" />
+  </ItemGroup>
+
+</Project>
