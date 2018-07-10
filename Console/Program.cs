@@ -22,12 +22,12 @@ namespace Console
                 System.Console.WriteLine("Example: Console.exe \"MyAutomaton.cs.cdelta\"");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("Optionally you can specify the output file path as second argument.");
-                System.Console.WriteLine("Example: Console.exe \"MyAutomaton.cs.cdelta\" \"MyAutomaton.cs\"");
+                System.Console.WriteLine("Example: Cdelta.Console.dll \"MyAutomaton.cs.cdelta\" \"MyAutomaton.cs\"");
                 return 1;
             }
 
             string inputFilePath = args[0];
-            string outputFilePath = args.Count() == 2 ? args[1] : inputFilePath + ".cs";
+            string outputFilePath = args.Count() == 2 ? args[1] : GetOutputFilePath(inputFilePath);
             FileInfo inputFileInfo;
 
             try
@@ -45,6 +45,7 @@ namespace Console
             {
                 System.Console.WriteLine("No output file path was specified as second argument.");
                 System.Console.WriteLine(String.Format("The filename '{0}.cs' was chosen.", inputFileInfo.Name));
+                System.Console.WriteLine();
             }
 
             string result = null;
@@ -77,10 +78,16 @@ namespace Console
                 System.Console.WriteLine(ex.Message);
                 return 1;
             }
-
-            System.Console.ReadKey();
-
+            
             return 0;
+        }
+
+        private static string GetOutputFilePath(string inputFilePath)
+        {
+            if (inputFilePath.EndsWith(".cs.cdelta"))
+                return inputFilePath.Replace(".cs.cdelta", ".cs");
+
+            return inputFilePath + ".cs";
         }
     }
 }
